@@ -12,9 +12,6 @@ function handleSubmit(event) {
       .then(function (res) {
         document.getElementById("results").innerHTML = `
                     <p><strong>Status:</strong> ${res.ok ? "OK" : "NG"}</p>
-                    <p><strong>Score:</strong> ${
-                      res.response.entailments[0].score
-                    }</p>
                     <p><strong>Type:</strong> ${
                       res.response.entities[0].type
                     }</p>
