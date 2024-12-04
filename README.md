@@ -33,7 +33,12 @@ This project evaluates a news article by analyzing its sentiment and subjectivit
     ```bash
     cd Front_end_pr4_evaluate_page
 
-2. **Install dependencies**:
+3. **Node -V**:
+    To check the installed version of Node.js:
+    ```bash
+    v20.14.0   
+
+4. **Install dependencies**:
     If the project has a package.json file, install the required dependencies by running:
     ```bash
    npm install
