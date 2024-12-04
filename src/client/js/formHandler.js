@@ -11,13 +11,18 @@ function handleSubmit(event) {
     postData("http://localhost:8000/api", { url: formText })
       .then(function (res) {
         document.getElementById("results").innerHTML = `
-                    <p><strong>Polarity:</strong> ${polarityChecker(
-                      res.score_tag
-                    )}</p>
-                    <p><strong>Agreement:</strong> ${res.agreement}</p>
-                    <p><strong>Subjectivity:</strong> ${res.subjectivity}</p>
-                    <p><strong>Confidence:</strong> ${res.confidence}</p>
-                    <p><strong>Irony:</strong> ${res.irony}</p>
+                    <p><strong>Status:</strong> ${res.ok ? "OK" : "NG"}</p>
+                    <p><strong>Score:</strong> ${
+                      res.response.entailments[0].score
+                    }</p>
+                    <p><strong>Type:</strong> ${
+                      res.response.entities[0].type
+                    }</p>
+                    <p><strong>Language:</strong> ${res.response.language}</p>
+                    <p><strong>Confidence:</strong> ${
+                      res.response.entities[0].confidenceScore
+                    }</p>
+                    <p><strong>Time:</strong> ${res.time}</p>
                 `;
       })
       .catch((error) => {

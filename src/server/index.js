@@ -29,8 +29,8 @@ app.get('/', function (req, res) {
 
 
 app.post("/api", async function (req, res) {
-  const textInput = req.body.text;
-  console.log(`Text input: ${textInput}`);
+  const textInput = req.body.url;
+  console.log(`Text input: ${req.body.url}`);
 
   try {
     const response = await fetch(baseURL, {
